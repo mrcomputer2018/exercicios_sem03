@@ -23,6 +23,7 @@ body {
     background-color: #fff;
     margin: 2rem auto;
     border-radius: .25rem;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
 .container-home h1 {
@@ -57,6 +58,14 @@ form .form-group input {
     font-size: 1rem;
     border: 1px solid #333;
     border-radius: 0.25rem;
+    background-color: #f5f5f5;
+}
+
+form .form-group textarea {
+    padding: 0.5rem;
+    font-size: 1rem;
+    border-radius: 0.25rem;
+    background-color: #f5f5f5;
 }
 
 form .form-group button[type="submit"] {
@@ -64,7 +73,7 @@ form .form-group button[type="submit"] {
     color: #333;
     padding: 1rem 1.5rem;
     cursor: pointer;
-    font-weight: 500;
+    font-weight: 700;
     text-transform: uppercase;
     border-radius: 0.3rem;
 }
