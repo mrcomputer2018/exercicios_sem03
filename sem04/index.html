@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro de Gato</title>
+    
+    <link rel="stylesheet" href="/sem04/css/style.css">
+</head>
+<body>
+    <div>
+        <a href="/sem04/perfil.html">Ver Perfil</a>
+    </div>
+    
+    <form id="catForm">
+
+        <h1>Cadastro de Gato</h1>
+
+        <img id="catImagePreview" alt="Pré-visualização da Imagem">
+
+        <div class="input-group">
+            <label for="catName">Nome:</label>
+            <input type="text" id="catName" name="catName" required>
+        </div>
+        <div class="input-group">
+            <label for="catAge">Idade (em anos):</label>
+            <input type="number" id="catAge" name="catAge" required>
+        </div>
+        <div class="input-group">
+            <label for="catDescription">Descrição:</label>
+            <textarea id="catDescription" name="catDescription" rows="4" required></textarea>
+        </div>
+        <div class="input-group">
+            <label for="catImage">URL da Foto:</label>
+            <input type="url" id="catImage" name="catImage" placeholder="https://example.com/imagem.jpg" required>
+        
+        </div>
+        <div class="input-group">
+            <label for="catColor">Cor:</label>
+            <input type="color" id="catColor" name="catColor" value="#ffffff">
+        </div>
+        <button type="submit">Cadastrar</button>
+        <!-- colocar um footer fixo -->
+    </form>
+
+    <script src="/sem04/js/script.js"></script>
+</body>
+</html>
