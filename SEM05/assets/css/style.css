@@ -10,6 +10,11 @@
     scroll-behavior: smooth;
 }
 
+.text-red {
+    color: red;
+    font-size: 0.8rem;
+}
+
 body {
     background: url("../image/image_home.jpg");
     background-size: cover;

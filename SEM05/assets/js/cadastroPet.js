@@ -1,9 +1,11 @@
-const form = document.querySelector('form')
 
-form.addEventListener("submit", adicionarPet)
+document.querySelector('form')
+.addEventListener("submit", adicionarPet)
 
 function adicionarPet(event) {
     event.preventDefault()
+
+    const foto = document.getElementById('foto').value
 
     const inputNome = document.getElementById('nome').value
 
@@ -19,9 +21,16 @@ function adicionarPet(event) {
 
     console.log(inputNome)
 
+    if(foto === '') {
+        document.getElementById('foto').style.borderColor = "red"
+        document.getElementById('foto').style.borderWidth = "2px"
+        document.getElementById('error-foto').innerText = "Este campo é obrigatorio"
+    }
+
     if(inputNome === '') {
-        inputNome.style.borderColor = "red"
-        spanNome.innerText = "Este campo é obrigatorio"
+        document.getElementById('nome').style.borderColor = "red"
+        document.getElementById('nome').style.borderWidth = "2px"
+        document.getElementById('error-nome').innerText = "Este campo é obrigatorio"
     }
 
     console.log("pet adicionado")
