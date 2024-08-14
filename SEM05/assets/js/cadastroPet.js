@@ -17,10 +17,6 @@ function adicionarPet(event) {
 
     const selectEspecie = document.getElementById('especie').value
 
-    const spanNome = document.getElementById("error-nome")
-
-    console.log(inputNome)
-
     if(foto === '') {
         document.getElementById('foto').style.borderColor = "red"
         document.getElementById('foto').style.borderWidth = "2px"
@@ -31,6 +27,30 @@ function adicionarPet(event) {
         document.getElementById('nome').style.borderColor = "red"
         document.getElementById('nome').style.borderWidth = "2px"
         document.getElementById('error-nome').innerText = "Este campo é obrigatorio"
+    }
+
+    if(inputIdade === '') {
+        document.getElementById('idade').style.borderColor = "red"
+        document.getElementById('idade').style.borderWidth = "2px"
+        document.getElementById('error-idade').innerText = "Este campo é obrigatorio"
+    }
+
+    if(inputColor === '') {
+        document.getElementById('color').style.borderColor = "red"
+        document.getElementById('color').style.borderWidth = "2px"
+        document.getElementById('error-color').innerText = "Este campo é obrigatorio"
+    }
+
+    if(textareaDescricao === '') {
+        document.getElementById('descricao').style.borderColor = "red"
+        document.getElementById('descricao').style.borderWidth = "2px"
+        document.getElementById('error-descricao').innerText = "Este campo é obrigatorio"
+    }
+
+    if(selectEspecie === '') {
+        document.getElementById('especie').style.borderColor = "red"
+        document.getElementById('especie').style.borderWidth = "2px"
+        document.getElementById('error-especie').innerText = "Este campo é obrigatorio"
     }
 
     console.log("pet adicionado")
