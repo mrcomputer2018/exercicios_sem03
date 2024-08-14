@@ -53,7 +53,8 @@ form .form-group label {
     margin-bottom: 0.5rem;
 }
 
-form .form-group input {
+form .form-group input,
+form .form-group select {
     padding: 0.5rem;
     font-size: 1rem;
     border: 1px solid #333;
