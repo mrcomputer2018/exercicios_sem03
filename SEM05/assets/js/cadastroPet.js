@@ -2,6 +2,9 @@
 document.querySelector('form')
 .addEventListener("submit", adicionarPet)
 
+document.querySelector('input')
+.addEventListener("click", limparErrors)
+
 function adicionarPet(event) {
     event.preventDefault()
 
@@ -22,6 +25,9 @@ function adicionarPet(event) {
         document.getElementById('foto').style.borderWidth = "2px"
         document.getElementById('error-foto').innerText = "Este campo é obrigatorio"
     }
+    else {
+        limparErrors()
+    }
 
     if(inputNome === '') {
         document.getElementById('nome').style.borderColor = "red"
@@ -35,10 +41,9 @@ function adicionarPet(event) {
         document.getElementById('error-idade').innerText = "Este campo é obrigatorio"
     }
 
-    if(inputColor === '') {
+    if(inputColor === '#000000') {
         document.getElementById('color').style.borderColor = "red"
         document.getElementById('color').style.borderWidth = "2px"
-        document.getElementById('error-color').innerText = "Este campo é obrigatorio"
     }
 
     if(textareaDescricao === '') {
@@ -52,7 +57,30 @@ function adicionarPet(event) {
         document.getElementById('especie').style.borderWidth = "2px"
         document.getElementById('error-especie').innerText = "Este campo é obrigatorio"
     }
+}
 
-    console.log("pet adicionado")
+function limparErrors() {
+    document.getElementById('foto').style.borderColor = ""
+    document.getElementById('foto').style.borderWidth = ""
+    document.getElementById('error-foto').innerText = ""
+
+    document.getElementById('nome').style.borderColor = ""
+    document.getElementById('nome').style.borderWidth = ""
+    document.getElementById('error-nome').innerText = ""
+
+    document.getElementById('idade').style.borderColor = ""
+    document.getElementById('idade').style.borderWidth = ""
+    document.getElementById('error-idade').innerText = ""
+
+    document.getElementById('color').style.borderColor = ""
+    document.getElementById('color').style.borderWidth = ""
+
+    document.getElementById('descricao').style.borderColor = ""
+    document.getElementById('descricao').style.borderWidth = ""
+    document.getElementById('error-descricao').innerText = ""
+
+    document.getElementById('especie').style.borderColor = ""
+    document.getElementById('especie').style.borderWidth = ""
+    document.getElementById('error-especie').innerText = ""
 }
 
