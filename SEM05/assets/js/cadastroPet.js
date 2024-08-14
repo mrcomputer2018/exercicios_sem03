@@ -15,6 +15,14 @@ function adicionarPet(event) {
 
     const selectEspecie = document.getElementById('especie').value
 
+    const spanNome = document.getElementById("error-nome")
+
+    console.log(inputNome)
+
+    if(inputNome === '') {
+        inputNome.style.borderColor = "red"
+        spanNome.innerText = "Este campo é obrigatorio"
+    }
 
     console.log("pet adicionado")
 }
