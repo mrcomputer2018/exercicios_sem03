@@ -5,6 +5,12 @@ document.querySelector('form')
 document.querySelector('input')
 .addEventListener("click", limparErrors)
 
+document.querySelector('textarea')
+.addEventListener("click", limparErrors)
+
+document.querySelector('select')
+.addEventListener("click", limparErrors)
+
 function adicionarPet(event) {
     event.preventDefault()
 
@@ -25,10 +31,7 @@ function adicionarPet(event) {
         document.getElementById('foto').style.borderWidth = "2px"
         document.getElementById('error-foto').innerText = "Este campo é obrigatorio"
     }
-    else {
-        limparErrors()
-    }
-
+    
     if(inputNome === '') {
         document.getElementById('nome').style.borderColor = "red"
         document.getElementById('nome').style.borderWidth = "2px"
@@ -56,6 +59,35 @@ function adicionarPet(event) {
         document.getElementById('especie').style.borderColor = "red"
         document.getElementById('especie').style.borderWidth = "2px"
         document.getElementById('error-especie').innerText = "Este campo é obrigatorio"
+    }
+
+    if(foto !== '' && inputNome !== '' && inputIdade !== '' && textareaDescricao !== '' && selectEspecie !== '') {
+        const pet = {
+            id: crypto.randomUUID(),
+            foto: foto,
+            nome: inputNome,
+            idade: inputIdade,
+            color: inputColor,
+            descricao: textareaDescricao,
+            especie: selectEspecie
+        }
+
+        const pets = JSON.parse(localStorage.getItem('pets')) || []
+
+        pets.push(pet)
+
+        localStorage.setItem('pets', JSON.stringify(pets))
+
+        document.getElementById('foto').value = ''
+        document.getElementById('nome').value = ''
+        document.getElementById('idade').value = ''
+        document.getElementById('color').value = '#000000'
+        document.getElementById('descricao').value = ''
+        document.getElementById('especie').value = ''
+
+        alert('Pet cadastrado com sucesso!')
+
+        console.log(pets)
     }
 }
 
