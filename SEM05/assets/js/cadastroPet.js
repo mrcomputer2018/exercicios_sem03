@@ -78,12 +78,15 @@ function adicionarPet(event) {
 
         localStorage.setItem('pets', JSON.stringify(pets))
 
-        document.getElementById('foto').value = ''
+        /* document.getElementById('foto').value = ''
         document.getElementById('nome').value = ''
         document.getElementById('idade').value = ''
         document.getElementById('color').value = '#000000'
         document.getElementById('descricao').value = ''
-        document.getElementById('especie').value = ''
+        document.getElementById('especie').value = '' */
+
+        // limpando formulario
+        document.getElementById('form-pet').reset();
 
         alert('Pet cadastrado com sucesso!')
 
